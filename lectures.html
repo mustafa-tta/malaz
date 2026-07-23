@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>المحاضرات - منصة المحاضرات</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-logo">
+            منصة <span>المحاضرات</span>
+        </div>
+        <div class="nav-links" id="navLinks">
+            <a href="index.html">الرئيسية</a>
+            <a href="lectures.html" class="active">المحاضرات</a>
+            <a href="contact.html">تواصل معنا</a>
+            <a href="login.html" class="nav-cta">دخول</a>
+        </div>
+        <div class="hamburger" id="hamburger">
+            <span></span><span></span><span></span>
+        </div>
+    </nav>
+
+    <div class="page-hero">
+        <h1>🎓 جميع المحاضرات المتاحة</h1>
+        <p>تصفح الجدول الدراسي واختر المحاضرات التي تود حضورها</p>
+    </div>
+
+    <section class="section section-light">
+        <div class="container">
+            <div style="text-align:left; margin-bottom:24px;">
+                <a href="add_lecture.html" class="btn btn-primary">➕ إضافة محاضرة جديدة</a>
+            </div>
+
+            <div class="cars-grid" id="lecturesGrid">
+                <!-- المحاضرة الأولى -->
+                <div class="car-card">
+                    <div class="car-card-image">
+                        <span style="font-size:4rem;">🎓</span>
+                    </div>
+                    <div class="car-card-body">
+                        <div class="car-name">مقدمة في الذكاء الاصطناعي</div>
+                        <div class="car-meta">
+                            <span>👨‍🏫 د. أحمد سليمان</span>
+                            <span>📍 قاعة 101 - كلية العلوم</span>
+                        </div>
+                        <div class="car-price">المادة: علوم الحاسوب</div>
+                        <button class="btn btn-primary" onclick="openDetail(1)">📋 عرض التفاصيل</button>
+                    </div>
+                </div>
+
+                <!-- المحاضرة الثانية -->
+                <div class="car-card">
+                    <div class="car-card-image">
+                        <span style="font-size:4rem;">💻</span>
+                    </div>
+                    <div class="car-card-body">
+                        <div class="car-name">تطوير تطبيقات الويب الحديثة</div>
+                        <div class="car-meta">
+                            <span>👨‍🏫 م. سارة محمود</span>
+                            <span>📍 المختبر المركزي</span>
+                        </div>
+                        <div class="car-price">المادة: هندسة البرمجيات</div>
+                        <button class="btn btn-primary" onclick="openDetail(2)">📋 عرض التفاصيل</button>
+                    </div>
+                </div>
+
+                <!-- المحاضرة الثالثة -->
+                <div class="car-card">
+                    <div class="car-card-image">
+                        <span style="font-size:4rem;">📊</span>
+                    </div>
+                    <div class="car-card-body">
+                        <div class="car-name">إدارة المشاريع البرمجية</div>
+                        <div class="car-meta">
+                            <span>👨‍🏫 د. عمر الفاروق</span>
+                            <span>📍 مدرج د. علي</span>
+                        </div>
+                        <div class="car-price">المادة: إدارة الأعمال</div>
+                        <button class="btn btn-primary" onclick="openDetail(3)">📋 عرض التفاصيل</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- نافذة التفاصيل (Modal) -->
+    <div class="modal-overlay" id="detailModal">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h3 id="detailTitle">تفاصيل المحاضرة</h3>
+                <button class="modal-close" onclick="closeModal()">✕</button>
+            </div>
+            <div id="detailContent"></div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">منصة <span>المحاضرات</span></div>
+            <p>منصتك الموثوقة لتنظيم ومتابعة المحاضرات التعليمية</p>
+            
+            <div class="social-icons">
+                <a href="https://github.com" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://youtube.com" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
+
+            <div class="footer-bottom">
+                <span>© 2026 منصة المحاضرات. جميع الحقوق محفوظة.</span>
+                <span>🇸🇩 السودان</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const lecturesData = [
+            { id: 1, title: 'مقدمة في الذكاء الاصطناعي', instructor: 'د. أحمد سليمان', subject: 'علوم الحاسوب', duration: 90, location: 'قاعة 101 - كلية العلوم', description: 'محاضرة شاملة تغطي أساسيات الذكاء الاصطناعي وتعلم الآلة مع تطبيقات عملية.' },
+            { id: 2, title: 'تطوير تطبيقات الويب الحديثة', instructor: 'م. سارة محمود', subject: 'هندسة البرمجيات', duration: 120, location: 'المختبر المركزي', description: 'شرح أساسيات تطوير الويب باستخدام أحدث التقنيات وأفضل الممارسات البرمجية.' },
+            { id: 3, title: 'إدارة المشاريع البرمجية', instructor: 'د. عمر الفاروق', subject: 'إدارة الأعمال', duration: 60, location: 'مدرج د. علي', description: 'تعلم كيف تنظم مشاريعك البرمجية وتدير فرق العمل بفعالية باستخدام المنهجيات الحديثة.' }
+        ];
+    </script>
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>تواصل معنا - منصة المحاضرات</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-logo">
+            منصة <span>المحاضرات</span>
+        </div>
+        <div class="nav-links" id="navLinks">
+            <a href="index.html">الرئيسية</a>
+            <a href="lectures.html">المحاضرات</a>
+            <a href="contact.html" class="active">تواصل معنا</a>
+            <a href="login.html" class="nav-cta">دخول</a>
+        </div>
+        <div class="hamburger" id="hamburger">
+            <span></span><span></span><span></span>
+        </div>
+    </nav>
+
+    <div class="page-hero">
+        <h1>📞 تواصل مع إدارة المنصة</h1>
+        <p>نحن هنا للرد على كافة أسئلتك واقتراحاتك حول المحاضرات</p>
+    </div>
+
+    <section class="section section-light">
+        <div class="container">
+            <div class="contact-form-card">
+                <h3>أرسل استفسارك</h3>
+                <form onsubmit="alert('تم إرسال رسالتك بنجاح!'); return false;">
+                    <div class="form-group">
+                        <label>الاسم الكامل</label>
+                        <input type="text" name="name" placeholder="اسمك الكامل" required />
+                    </div>
+                    <div class="form-group">
+                        <label>البريد الإلكتروني</label>
+                        <input type="email" name="email" placeholder="example@domain.com" required />
+                    </div>
+                    <div class="form-group">
+                        <label>الرسالة / الاستفسار</label>
+                        <textarea name="message" rows="4" placeholder="اكتب استفسارك هنا..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width:100%;">📤 إرسال الرسالة</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">منصة <span>المحاضرات</span></div>
+            <p>منصتك الموثوقة لتنظيم ومتابعة المحاضرات التعليمية</p>
+            
+            <div class="social-icons">
+                <a href="https://github.com" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://youtube.com" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
+
+            <div class="footer-bottom">
+                <span>© 2026 منصة المحاضرات. جميع الحقوق محفوظة.</span>
+                <span>🇸🇩 السودان</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
